@@ -1,0 +1,12 @@
+runtime: nodejs14
+service: default 
+
+env_variables:
+  NODE_ENV: 'production'
+  DB_USERNAME: 'develop'
+  DB_PASSWORD: 'develop'
+  DB_HOST: '35.222.229.229'
+  DB_PORT: '5432'
+  DB_DATABASE: 'seminar'
+  APP_URL_PREFIX: 'v1'
+  INSTANCE_UNIX_SOCKET: '/cloudsql/pro-equinox-374617:us-central1:seminar-main'

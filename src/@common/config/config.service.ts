@@ -45,7 +45,7 @@ export class ConfigService {
   get orm_config(): any {
     const pathEntities = ['dist/entities/**/*.entity.js'];
 
-    const configDefault: TypeOrmModuleOptions = {
+    let configDefault: TypeOrmModuleOptions = {
       type: 'postgres',
       host: this.envConfig.DB_HOST,
       port: +this.envConfig.DB_PORT,
@@ -55,6 +55,24 @@ export class ConfigService {
       synchronize: true,
       ssl: false,
     };
+
+    console.log('process.env.NODE_ENV');
+    console.log(this.envConfig.INSTANCE_UNIX_SOCKET);
+
+    if (process.env.NODE_ENV === 'production')
+      configDefault = {
+        type: 'postgres',
+        host: this.envConfig.INSTANCE_UNIX_SOCKET,
+        port: +this.envConfig.DB_PORT,
+        username: this.envConfig.DB_USERNAME,
+        password: this.envConfig.DB_PASSWORD,
+        database: this.envConfig.DB_DATABASE,
+        synchronize: true,
+        extra: {
+          socketPath: this.envConfig.INSTANCE_UNIX_SOCKET,
+        },
+        logging: false,
+      };
 
     return {
       develop: {
