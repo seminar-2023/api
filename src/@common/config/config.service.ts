@@ -56,9 +56,6 @@ export class ConfigService {
       ssl: false,
     };
 
-    console.log('process.env.NODE_ENV');
-    console.log(this.envConfig.INSTANCE_UNIX_SOCKET);
-
     if (process.env.NODE_ENV === 'production')
       configDefault = {
         type: 'postgres',
