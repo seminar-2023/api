@@ -10,6 +10,9 @@ export class Ask {
   @Column('character varying', { length: 200, nullable: false })
   name: string;
 
+  @Column('character varying', { length: 200, nullable: true })
+  type: string;
+
   @Column({
     type: 'enum',
     enum: State,

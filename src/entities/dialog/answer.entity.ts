@@ -12,7 +12,7 @@ export class Answer {
   @PrimaryGeneratedColumn({ type: 'bigint' })
   id: number;
 
-  @Column('character varying', { length: 200, nullable: false })
+  @Column('character varying', { length: 500, nullable: true })
   text: string;
 
   @ManyToOne(() => Ask, (ask) => ask.id, {

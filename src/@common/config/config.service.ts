@@ -52,7 +52,7 @@ export class ConfigService {
       username: this.envConfig.DB_USERNAME,
       password: this.envConfig.DB_PASSWORD,
       database: this.envConfig.DB_DATABASE,
-      synchronize: true,
+      synchronize: false,
       ssl: false,
     };
 

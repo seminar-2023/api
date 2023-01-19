@@ -10,3 +10,4 @@ env_variables:
   DB_DATABASE: 'seminar'
   APP_URL_PREFIX: 'v1'
   INSTANCE_UNIX_SOCKET: '/cloudsql/pro-equinox-374617:us-central1:seminar-main'
+  DIALOGFLOW_PROJECT_ID: pro-equinox-374617
